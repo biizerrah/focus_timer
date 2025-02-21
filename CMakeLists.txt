@@ -44,6 +44,8 @@ pico_set_program_version(focus_timer "0.1")
 pico_enable_stdio_uart(focus_timer 0)
 pico_enable_stdio_usb(focus_timer 1)
 
+pico_generate_pio_header(focus_timer ${CMAKE_CURRENT_LIST_DIR}/focus_timer.pio)
+
 # Add the standard library to the build
 target_link_libraries(focus_timer
         pico_stdlib

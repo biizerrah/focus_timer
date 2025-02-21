@@ -42,11 +42,13 @@ pico_set_program_version(focus_timer "0.1")
 
 # Modify the below lines to enable/disable output over UART/USB
 pico_enable_stdio_uart(focus_timer 0)
-pico_enable_stdio_usb(focus_timer 0)
+pico_enable_stdio_usb(focus_timer 1)
 
 # Add the standard library to the build
 target_link_libraries(focus_timer
-        pico_stdlib)
+        pico_stdlib
+        hardware_pio
+        )
 
 # Add the standard include files to the build
 target_include_directories(focus_timer PRIVATE
